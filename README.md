@@ -1,1 +1,116 @@
 # 2025.1_G4_SMA_Leilão com Reputação
+
+## Sistema Multiagentes Leilão com Reputação
+
+**Disciplina**: FGA0053 - Sistemas Multiagentes  
+**Nro do Grupo**: 4  
+**Frente de Pesquisa**: Leilão com Reputação  
+
+## Alunos
+| Matrícula      | Aluno                           |
+|----------------|---------------------------------|
+| 232000712      | Alexandre Tostes S. e S. Junior |
+| 241012202      | Davi Ursulino de Oliveira       |
+| 170146243      | João Lucas Costa Vale           |
+| 211061968      | João Pedro Veras Gomes          |
+| 222006122      | João Vitor Alves Viana          |
+
+## Sobre 
+Desenvolvemos um sistema de múltiplos agentes para leilões online que incorpora uma técnica de avaliação da idoneidade dos usuários. Diferentemente de outros sistemas que apenas praticam o preço, o nosso possibilita aos agentes avaliar o histórico de comportamento dos participantes, cooperando no estabelecimento de relações mais confiáveis e duradouras. A avaliação da idoneidade é feita de modo adaptável, levando em consideração, entre outros, pontualidade de entrega, padrão de qualidade e grau de confiança, refletindo as escolhas de compra e venda destes agentes. Tal abordagem reduz o comportamento especulativo e fomenta a troca contínua, fazendo com que o sistema se assemelhe a um mercado real onde existe segurança compartilhada. Além de ser uma aplicação válida dos princípios dos sistemas de múltiplos agentes, o projeto constitui a base para estudos sobre negociação automática e construção de modelos de segurança em contextos descentralizados.
+
+**Aplicações práticas**:
+- Plataformas de e-commerce (ex: eBay)
+- Sistemas de manutenção preditiva
+- Alocação de recursos em ambientes IoT
+- Clínicas odontológicas acadêmicas (agendamento de vagas)
+
+**Referências fundamentais**:
+- COSTA, Rosane R. da et al. (2016). Avaliação de sistema multiagente para leilões eletrônicos com reputação
+- RABENHORST, Rodrigo; BILLA, Cleo Zanella (2016). Sistema multiagente com leilões para clínica odontológica
+- JENNINGS, Nicholas R. (2001). Automated Negotiation: Prospects, Methods and Challenges
+
+## Screenshots
+*(Adicionar após desenvolvimento da interface)*
+
+## Instalação 
+**Linguagens**: Java  
+**Tecnologias**: JADE, Eclipse IDE  
+
+**Pré-requisitos**:
+1. JDK 17+
+2. Eclipse IDE (última versão)
+3. Biblioteca JADE
+
+**Passos de instalação**:
+```bash
+git clone https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao.git
+cd 2025.1_G4_SMA_LeilaoComReputacao
+```
+
+**Importar no Eclipse**:  
+`File > Import > Existing Maven Projects`  
+
+**Configuração JADE**:
+- Adicionar JADE ao classpath (`jade.jar`)
+
+
+## Uso
+1. Iniciar plataforma JADE (container principal)  
+2. Instanciar agentes:  
+**Agente Consultor**: Possui conhecimento prévio sobre algumas obras e atua como avaliador do sistema. Ele é responsável por calcular e atualizar a reputação dos participantes com base em critérios como pontualidade, qualidade e confiabilidade nas interações. Sua função é garantir maior confiança e transparência nos leilões.
+
+**Agente Vendedor**: Registra uma ou mais obras no sistema e as coloca à venda através de leilões. Ele interage com o Consultor para disponibilizar as obras com reputação associada, e com os Compradores para receber lances. Também é responsável por aceitar a melhor proposta considerando valor e confiabilidade do comprador.
+
+**Agentes Compradores**: Possuem saldo limitado e estratégias próprias para participar dos leilões. Eles avaliam as obras disponíveis, analisam a reputação do Vendedor (fornecida pelo Consultor), e fazem suas ofertas buscando maximizar o benefício da compra. Podem optar por não participar caso julguem o vendedor ou a obra pouco confiáveis.
+
+### Fluxo básico:
+-Vendedor registra o item para leilão
+-Consultor monitora o histórico e avalia reputações dos participantes
+-Vendedor (leiloeiro) anuncia o leilão aos compradores
+-Compradores enviam lances considerando tanto o valor quanto a reputação
+-Consultor fornece informações de reputação para apoiar as decisões
+-Vendedor declara o vencedor com base na combinação do valor do lance e reputação
+-Sistema atualiza as reputações dos agentes conforme o resultado do leilão
+
+## Vídeo
+*(Adicionar link após gravação)*
+
+## Participações
+| Nome do Membro            | Contribuição | Significância | Comprovação |
+|---------------------------|--------------|----------------|-------------|
+| Alexandre Tostes          |              |                |             |
+| Davi Ursulino             |              |                |             |
+| João Lucas Costa Vale     |              |                |             |
+| João Pedro Veras Gomes    |              |                |             |
+| João Vitor Alves Viana    |              |                |             |
+
+*(Preencher durante desenvolvimento com commits específicos)*
+
+## Outros
+
+### Lições Aprendidas:
+- Complexidade na modelagem de reputação dinâmica  
+- Desafios na sincronização de múltiplos agentes  
+- Importância de estratégias de equilíbrio entre valor e reputação  
+- Dificuldades na simulação de comportamentos estratégicos  
+
+### Trabalhos Futuros:
+- Implementar diferentes algoritmos de reputação  
+- Adicionar mecanismos contra colusão entre agentes  
+- Desenvolver interface gráfica para monitoramento  
+- Incorporar aprendizado de máquina para adaptação de estratégias  
+- Expandir para leilões combinatórios  
+
+## Fontes
+
+### Referências Selecionadas
+- COSTA, Rosane R. da et al. *Avaliação de um sistema multiagente para leilões eletrônicos baseado em ontologias e reputação*. Revista Brasileira de Computação Aplicada, 2016.
+- RABENHORST, Rodrigo; BILLA, Cleo Zanella. *Um sistema multiagente com leilões para a seleção de pacientes numa clínica odontológica*. Workshop-Escola de Sistemas de Agentes, 2016.
+- MARTIN, A. et al. *Multi Agent Communication System for Online Auction with Decision Support System by JADE and TRACE*. Journal of Convergence Information Technology, 2009.
+- LEE, Seung-Yong et al. *The study of autonomous negotiation system based on auction enabled intelligent agent*. International Journal of Software Engineering, 2014.
+
+### Referências Adicionais
+- BANASZEWSKI, Roni F. et al. *An application of a multi-agent auction-based protocol to the tactical planning of oil product transport*. Computers & Chemical Engineering, 2013.
+- TANG, Shuang et al. *Intelligent agents for auction-based federated learning: a survey*. arXiv, 2024.
+- JENNINGS, Nicholas R. *Automated Negotiation: Prospects, Methods and Challenges*. International Journal of Group Decision and Negotiation, 2001.
+- RAMCHURN, Sarvapali D. et al. *Trust in multi-agent systems*. The Knowledge Engineering Review, 2004.
