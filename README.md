@@ -57,20 +57,22 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 ## Uso
 1. Iniciar plataforma JADE (container principal)  
 2. Instanciar agentes:  
-**Agente Consultor**: Possui conhecimento prévio sobre algumas obras e atua como avaliador do sistema. Ele é responsável por calcular e atualizar a reputação dos participantes com base em critérios como pontualidade, qualidade e confiabilidade nas interações. Sua função é garantir maior confiança e transparência nos leilões.
+**Agente Consultor**: Possui conhecimento prévio sobre algumas obras e atua como avaliador do sistema. Ele é responsável por fornecer um valor mais próximo do produto com base em critérios próprios. Sua função é tentar fornecer a informação mais precisa.
 
-**Agente Vendedor**: Registra uma ou mais obras no sistema e as coloca à venda através de leilões. Ele interage com o Consultor para disponibilizar as obras com reputação associada, e com os Compradores para receber lances. Também é responsável por aceitar a melhor proposta considerando valor e confiabilidade do comprador.
+**Agente Vendedor**: Registra uma ou mais obras no sistema e as coloca à venda através de leilões. Ele interage com o Comprador para disponibilizar as obras para receber lances. Também é responsável por aceitar a melhor proposta considerando valor do comprador.
 
-**Agentes Compradores**: Possuem saldo limitado e estratégias próprias para participar dos leilões. Eles avaliam as obras disponíveis, analisam a reputação do Vendedor (fornecida pelo Consultor), e fazem suas ofertas buscando maximizar o benefício da compra. Podem optar por não participar caso julguem o vendedor ou a obra pouco confiáveis.
+**Agentes Compradores**: Possuem saldo limitado e estratégias próprias para participar dos leilões. Eles avaliam as obras disponíveis, analisam a reputação do Consultor, e fazem suas ofertas buscando maximizar o benefício da compra. Podem optar por não participar caso julguem que não vale a pena.
+
+
 
 ### Fluxo básico:
 -Vendedor registra o item para leilão
--Consultor monitora o histórico e avalia reputações dos participantes
+-Comprador procura pelo item para e perguntar ao consultor qual o valor do item
+-Consultor cobra uma taxa pela consulta e fornece um valor 
 -Vendedor (leiloeiro) anuncia o leilão aos compradores
--Compradores enviam lances considerando tanto o valor quanto a reputação
--Consultor fornece informações de reputação para apoiar as decisões
--Vendedor declara o vencedor com base na combinação do valor do lance e reputação
--Sistema atualiza as reputações dos agentes conforme o resultado do leilão
+-Compradores enviam lances considerando tanto o valor do consultor ou caso não tenha, o próprio valor
+-Vendedor declara o vencedor com base na combinação do valor do lance
+-Sistema atualiza a reputação do consultor conforme o resultado do leilão
 
 ## Vídeo
 *(Adicionar link após gravação)*
@@ -82,7 +84,7 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 | Davi Ursulino             |              |                |             |
 | João Lucas Costa Vale     |              |                |             |
 | João Pedro Veras Gomes    |              |                |             |
-| João Vitor Alves Viana    |              |                |             |
+| João Vitor Alves Viana    |  Desenvolvimento geral |     Alta           |             |
 
 *(Preencher durante desenvolvimento com commits específicos)*
 
@@ -96,8 +98,8 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 
 ### Trabalhos Futuros:
 - Implementar diferentes algoritmos de reputação  
-- Adicionar mecanismos contra colusão entre agentes  
-- Desenvolver interface gráfica para monitoramento  
+- Adicionar mecanismos para melhorar a interação entre agentes  
+- Desenvolver interface gráfica para monitooramento  
 - Incorporar aprendizado de máquina para adaptação de estratégias  
 - Expandir para leilões combinatórios  
 
