@@ -63,7 +63,7 @@ public class Consultant extends Agent {
                     
                     Thread.sleep(1000 + random.nextInt(2000));
                     
-                    double variation = 0.95 + random.nextDouble() * 0.1;
+                    double variation = 0.80 + random.nextDouble() * 0.2;
                     int suggestedPrice = (int)(currentPrice * variation);
                     suggestedPrice = Math.min(suggestedPrice, budget);
                     

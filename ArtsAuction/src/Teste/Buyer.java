@@ -10,6 +10,7 @@ import jade.domain.FIPAException;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import java.util.UUID;
+import java.util.Random; 
 
 public class Buyer extends Agent {
     private String targetArtwork;
@@ -21,6 +22,8 @@ public class Buyer extends Agent {
     private int suggestedPrice;
     private String conversationId;
     private boolean consulted = false;
+    private int controller=0;
+    private Random random = new Random(); 
 
     @Override
     protected void setup() {
@@ -169,13 +172,14 @@ public class Buyer extends Agent {
                 // Oferta recusada ou timeout
                 System.out.println("[BUYER] Oferta recusada ou timeout");
                 
-                // Se quiser implementar lógica de aumento progressivo:
-                // suggestedPrice = Math.min(suggestedPrice + incremento, availableBudget);
+                
+				double incrementFator = 1 + random.nextDouble() * 0.2;
+                suggestedPrice = Math.min((int)(suggestedPrice * incrementFator), availableBudget);
             }
         }
     private class ConsultExpertBehaviour extends OneShotBehaviour {
         @Override
-        public void action() {
+        public void action(){
             if (consultantAID != null && availableBudget >= ArtConstants.CONSULTATION_FEE) {
                 System.out.println("[BUYER] Pagando taxa de consulta de $" + ArtConstants.CONSULTATION_FEE);
                 availableBudget -= ArtConstants.CONSULTATION_FEE;
@@ -206,42 +210,20 @@ public class Buyer extends Agent {
                     System.out.println("[BUYER] Timeout na consulta ao especialista");
                     suggestedPrice = currentPrice;
                 }
-            } else if (consultantAID == null) {
+                
+                
+            } else if (consultantAID == null && controller != 1) {
                 System.out.println("[BUYER] Nenhum consultor disponível - usando preço atual");
-                suggestedPrice = currentPrice;
+                double primeirolance = 0.70 + (0.8 - 0.7)*random.nextDouble();
+                suggestedPrice = (int)(currentPrice * primeirolance);
+                controller++;
+                makeOffer();
+                
+                
             } else {
                 System.out.println("[BUYER] Orçamento insuficiente para consulta (necessário $" + 
                                  ArtConstants.CONSULTATION_FEE + ")");
-                suggestedPrice = currentPrice;
+                
             }
             makeOffer();
-        }
-
-        private void makeOffer() {
-            suggestedPrice = Math.min(suggestedPrice, availableBudget);
-            System.out.println("[BUYER] Fazendo oferta de $" + suggestedPrice + 
-                             " (Orçamento restante: $" + (availableBudget - suggestedPrice) + ")");
-            
-            ACLMessage propose = new ACLMessage(ACLMessage.PROPOSE);
-            propose.addReceiver(currentSeller);
-            propose.setContent(targetArtwork + ";" + suggestedPrice);
-            propose.setOntology(ArtConstants.ONTOLOGY_ART_AUCTION);
-            send(propose);
-            
-            ACLMessage response = blockingReceive(
-                MessageTemplate.and(
-                    MessageTemplate.MatchSender(currentSeller),
-                    MessageTemplate.MatchPerformative(ACLMessage.ACCEPT_PROPOSAL)
-                ),
-                5000
-            );
-            
-            if (response != null) {
-                System.out.println("[BUYER] Oferta aceita! Compra realizada por $" + suggestedPrice);
-                doDelete();
-            } else {
-                System.out.println("[BUYER] Oferta recusada ou timeout");
-            }
-        }
-    }
-    }}
+        }}}}
