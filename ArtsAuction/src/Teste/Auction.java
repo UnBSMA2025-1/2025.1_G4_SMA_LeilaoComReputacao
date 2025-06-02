@@ -4,29 +4,48 @@ import jade.core.AID;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe que representa um leilão de uma obra de arte.
+ * Gerencia todo o ciclo de vida do leilão, desde sua criação até o fechamento.
+ */
 public class Auction {
+    // Enumeração que define os possíveis estados de um leilão
     public enum AuctionState {
-        CREATED, RUNNING, CLOSED
+        CREATED,   // Leilão criado mas não iniciado
+        RUNNING,   // Leilão em andamento aceitando lances
+        CLOSED     // Leilão finalizado
     }
 
-    private final String artwork;
-    private final AID seller;
-    private AID highestBidder;
-    private int currentBid;
-    private int minNextBid;
-    private final List<AID> bidders = new ArrayList<>();
-    private AuctionState state;
+    // Atributos do leilão
+    private final String artwork;      // Nome/identificação da obra de arte
+    private final AID seller;          // Agente vendedor responsável pelo leilão
+    private AID highestBidder;         // Agente com o maior lance atual
+    private int currentBid;            // Valor do maior lance atual
+    private int minNextBid;            // Valor mínimo para o próximo lance
+    private final List<AID> bidders;   // Lista de participantes do leilão
+    private AuctionState state;        // Estado atual do leilão
 
+    /**
+     * Construtor do leilão.
+     * @param artwork Nome/identificação da obra de arte
+     * @param seller Agente vendedor responsável
+     * @param startingBid Valor inicial do lance
+     */
     public Auction(String artwork, AID seller, int startingBid) {
         this.artwork = artwork;
         this.seller = seller;
         this.currentBid = startingBid;
-        this.minNextBid = calculateMinNextBid(startingBid);
-        this.state = AuctionState.CREATED;
-        this.highestBidder = null;
+        this.minNextBid = calculateMinNextBid(startingBid); // Calcula o próximo lance mínimo
+        this.state = AuctionState.CREATED; // Estado inicial
+        this.highestBidder = null; // Sem vencedor inicial
+        this.bidders = new ArrayList<>(); // Lista vazia de participantes
         System.out.println("Leilão criado para '" + artwork + "' por " + seller.getLocalName() + " com lance inicial " + startingBid);
     }
 
+    /**
+     * Adiciona um participante ao leilão.
+     * @param bidder Agente participante a ser adicionado
+     */
     public void addBidder(AID bidder) {
         if (!bidders.contains(bidder)) {
             bidders.add(bidder);
@@ -34,17 +53,28 @@ public class Auction {
         }
     }
 
+    /**
+     * Registra um novo lance no leilão (método sincronizado para thread safety).
+     * @param bidder Agente que está fazendo o lance
+     * @param bid Valor do lance
+     * @return true se o lance foi aceito, false caso contrário
+     */
     public synchronized boolean placeBid(AID bidder, int bid) {
+        // Verifica se o leilão está ativo
         if (state != AuctionState.RUNNING) {
             System.out.println("Leilão para '" + artwork + "' não está ativo. Lance de " + bidder.getLocalName() + " rejeitado.");
             return false;
         }
+        
+        // Verifica se o lance atende ao valor mínimo
         if (bid >= minNextBid) {
             System.out.println("Novo lance recebido para '" + artwork + "' de " + bidder.getLocalName() + ": " + bid);
+            // Atualiza informações do leilão
             highestBidder = bidder;
             currentBid = bid;
             minNextBid = calculateMinNextBid(currentBid);
-            addBidder(bidder);
+            addBidder(bidder); // Garante que o participante está na lista
+            
             System.out.println("Maior lance atualizado para " + currentBid + ". Próximo lance mínimo: " + minNextBid);
             return true;
         } else {
@@ -53,11 +83,20 @@ public class Auction {
         }
     }
 
+    /**
+     * Calcula o valor mínimo para o próximo lance com base no lance atual.
+     * @param currentBidValue Valor do lance atual
+     * @return Valor mínimo para o próximo lance
+     */
     private int calculateMinNextBid(int currentBidValue) {
+        // Incremento de 5% do valor atual (mínimo de 1 unidade)
         int increment = Math.max(1, (int) Math.round(currentBidValue * 0.05));
         return currentBidValue + increment;
     }
 
+    /**
+     * Inicia o leilão, permitindo a aceitação de lances.
+     */
     public void startAuction() {
         if (state == AuctionState.CREATED) {
             this.state = AuctionState.RUNNING;
@@ -67,6 +106,9 @@ public class Auction {
         }
     }
 
+    /**
+     * Finaliza o leilão, anunciando o vencedor (se houver).
+     */
     public void closeAuction() {
         if (state == AuctionState.RUNNING) {
             this.state = AuctionState.CLOSED;
@@ -80,12 +122,40 @@ public class Auction {
         }
     }
 
-    // Getters...
+    // Métodos getters para acesso às informações do leilão
+    
+    /**
+     * @return Nome/identificação da obra de arte
+     */
     public String getArtwork() { return artwork; }
+    
+    /**
+     * @return Agente vendedor responsável
+     */
     public AID getSeller() { return seller; }
+    
+    /**
+     * @return Agente com o maior lance atual
+     */
     public AID getHighestBidder() { return highestBidder; }
+    
+    /**
+     * @return Valor do maior lance atual
+     */
     public int getCurrentBid() { return currentBid; }
+    
+    /**
+     * @return Valor mínimo para o próximo lance
+     */
     public int getMinNextBid() { return minNextBid; }
+    
+    /**
+     * @return Lista de participantes do leilão (cópia para evitar modificações externas)
+     */
     public List<AID> getBidders() { return new ArrayList<>(bidders); }
+    
+    /**
+     * @return Estado atual do leilão
+     */
     public AuctionState getState() { return state; }
 }
