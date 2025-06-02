@@ -165,7 +165,8 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 | Davi Ursulino             |              |                |             |
 | João Lucas Costa Vale     |  Desenvolvimento geral        |         Alta       |      Commit organizacional: [0e865059c81a637c78bf73e779c480e3f30fd442](https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao/commit/7a4f2dfdcf9f7d848be63d03a6ac60801ec960fa)       |
 | João Pedro Veras Gomes    |  Desenvolvimento geral |     Alta | "Algumas melhorias" [272b3fca348c49f5eb1644ce17c775ebdfdb08db](https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao/commit/272b3fca348c49f5eb1644ce17c775ebdfdb08db)       |
-| João Vitor Alves Viana    |  Desenvolvimento geral |     Alta  |             |
+| João Vitor Alves Viana    |  Desenvolvimento geral |     Alta  | 1-https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao/commit/4e10191497b090cd040d5376816433aafa0f05dc
+2-https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao/commit/2409b042a84a0c1e0dc3d1c9037d9242036ff418|
 
 *(Preencher durante desenvolvimento com commits específicos)*
 
