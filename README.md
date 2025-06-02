@@ -30,7 +30,88 @@ Desenvolvemos um sistema de múltiplos agentes para leilões online que incorpor
 - JENNINGS, Nicholas R. (2001). Automated Negotiation: Prospects, Methods and Challenges
 
 ## Screenshots
-*(Adicionar após desenvolvimento da interface)*
+<center>
+<a id="img1">*Imagem 1*</a>  
+<img src="ArtsAuction/assets/prints/1.png" alt="Imagem 1" width="400"/>  
+<font size="2">
+  <p style="text-align: center">
+    <b>Fonte: ArtsAuction</b>
+  </p>
+</font>
+</center>
+
+<br>
+
+<center>
+<a id="img2">*Imagem 2*</a>  
+<img src="ArtsAuction/assets/prints/2.png" alt="Imagem 2" width="400"/>  
+<font size="2">
+  <p style="text-align: center">
+    <b>Fonte: ArtsAuction</b>
+  </p>
+</font>
+</center>
+
+<br>
+
+<center>
+<a id="img3">*Imagem 3*</a>  
+<img src="ArtsAuction/assets/prints/3.png" alt="Imagem 3" width="400"/>  
+<font size="2">
+  <p style="text-align: center">
+    <b>Fonte: ArtsAuction</b>
+  </p>
+</font>
+</center>
+
+<br>
+
+<center>
+<a id="img4">*Imagem 4*</a>  
+<img src="ArtsAuction/assets/prints/4.png" alt="Imagem 4" width="400"/>  
+<font size="2">
+  <p style="text-align: center">
+    <b>Fonte: ArtsAuction</b>
+  </p>
+</font>
+</center>
+
+<br>
+
+<center>
+<a id="img5">*Imagem 5*</a>  
+<img src="ArtsAuction/assets/prints/5.png" alt="Imagem 5" width="400"/>  
+<font size="2">
+  <p style="text-align: center">
+    <b>Fonte: ArtsAuction</b>
+  </p>
+</font>
+</center>
+
+<br>
+
+<center>
+<a id="img6">*Imagem 6*</a>  
+<img src="ArtsAuction/assets/prints/6.png" alt="Imagem 6" width="400"/>  
+<font size="2">
+  <p style="text-align: center">
+    <b>Fonte: ArtsAuction</b>
+  </p>
+</font>
+</center>
+
+<br>
+
+<center>
+<a id="img7">*Imagem 7*</a>  
+<img src="ArtsAuction/assets/prints/7.png" alt="Imagem 7" width="400"/>  
+<font size="2">
+  <p style="text-align: center">
+    <b>Fonte: ArtsAuction</b>
+  </p>
+</font>
+</center>
+
 
 ## Instalação 
 **Linguagens**: Java  
