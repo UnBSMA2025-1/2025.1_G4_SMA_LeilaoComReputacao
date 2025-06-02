@@ -164,8 +164,8 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 | Alexandre Tostes          |              |                |             |
 | Davi Ursulino             |              |                |             |
 | João Lucas Costa Vale     |              |                |             |
-| João Pedro Veras Gomes    |              |                |             |
-| João Vitor Alves Viana    |  Desenvolvimento geral |     Alta           |             |
+| João Pedro Veras Gomes    |  Desenvolvimento geral |     Alta | Algumas melhorias 272b3fca348c49f5eb1644ce17c775ebdfdb08db       |
+| João Vitor Alves Viana    |  Desenvolvimento geral |     Alta  |             |
 
 *(Preencher durante desenvolvimento com commits específicos)*
 
