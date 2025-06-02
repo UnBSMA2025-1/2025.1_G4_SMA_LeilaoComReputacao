@@ -163,7 +163,7 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 |---------------------------|--------------|----------------|-------------|
 | Alexandre Tostes          |              |                |             |
 | Davi Ursulino             |              |                |             |
-| João Lucas Costa Vale     |              |                |             |
+| João Lucas Costa Vale     |  Desenvolvimento geral        |         Alta       |      Commit organizacional: 0e865059c81a637c78bf73e779c480e3f30fd442       |
 | João Pedro Veras Gomes    |  Desenvolvimento geral |     Alta | Algumas melhorias 272b3fca348c49f5eb1644ce17c775ebdfdb08db       |
 | João Vitor Alves Viana    |  Desenvolvimento geral |     Alta  |             |
 
