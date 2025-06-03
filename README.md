@@ -178,6 +178,7 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 - Dificuldades na simulação de comportamentos estratégicos
 
 ### Percepções:
+Em uma primeira análise, percebemos que a implementação do leilão com reputação não seria fácil, pois, devido ao desconhecimento das tecnologias envolvidas e ao novo paradigma aprendido — como JADE, Java e Eclipse —, o processo se tornou mais demorado. Diante disso, decidimos focar no funcionamento principal do sistema, que é o leilão, e deixar a funcionalidade de reputação para ser implementada futuramente.
 
 ### Contribuições e Fragilidades: 
 - Integrar sistema de reputação no consultor
