@@ -161,7 +161,7 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 ## Participações
 | Nome do Membro            | Contribuição | Significância | Comprovação |
 |---------------------------|--------------|----------------|-------------|
-| Alexandre Tostes          |  Desenvolvimento geral             |   Alta             |             |
+| Alexandre Tostes          |  Desenvolvimento geral             |   Alta             |   https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao/tree/381dbe1e4c570e4a5c8f6cf4752c67e6b88dba7d          |
 | Davi Ursulino             |       Desenvolvimento geral       |      Alta          |    "Algumas melhorias" [272b3fca348c49f5eb1644ce17c775ebdfdb08db](https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao/commit/272b3fca348c49f5eb1644ce17c775ebdfdb08db)         |
 | João Lucas Costa Vale     |  Desenvolvimento geral        |         Alta       |      Commit organizacional: [0e865059c81a637c78bf73e779c480e3f30fd442](https://github.com/UnBSMA2025-1/2025.1_G4_SMA_LeilaoComReputacao/commit/7a4f2dfdcf9f7d848be63d03a6ac60801ec960fa)       |
 | João Pedro Veras Gomes    |  |     |       |
