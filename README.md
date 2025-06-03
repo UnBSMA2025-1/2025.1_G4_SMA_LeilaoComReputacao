@@ -156,7 +156,7 @@ cd 2025.1_G4_SMA_LeilaoComReputacao
 -Sistema atualiza a reputação do consultor conforme o resultado do leilão
 
 ## Vídeo
-*(Adicionar link após gravação)*
+[*(Adicionar link após gravação)*](https://youtu.be/-1GAaNqihck)
 
 ## Participações
 | Nome do Membro            | Contribuição | Significância | Comprovação |
