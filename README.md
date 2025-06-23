@@ -12,7 +12,6 @@
 | 232000712      | Alexandre Tostes S. e S. Junior |
 | 241012202      | Davi Ursulino de Oliveira       |
 | 170146243      | João Lucas Costa Vale           |
-| 211061968      | João Pedro Veras Gomes          |
 | 222006122      | João Vitor Alves Viana          |
 
 ## Sobre 
